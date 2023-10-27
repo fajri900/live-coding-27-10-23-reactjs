@@ -20,6 +20,7 @@ function Result({ resultInput }) {
         {resultData.map((data) => {
           const totalInterest = data.valueEndOfYear - data.annualInvestment * data.year - initialInvestment;
           const totalAmountInvested = data.valueEndOfYear - totalInterest;
+
           return (
             <tr key={data.year}>
               <td>{data.year}</td>

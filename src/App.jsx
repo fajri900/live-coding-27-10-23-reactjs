@@ -5,8 +5,8 @@ import Result from "./components/Result";
 
 function App() {
   const [userInput, setUserInput] = useState({
-    intialInvesment: 1000,
-    annualInvesment: 1500,
+    initialInvestment: 1000,
+    annualInvestment: 1500,
     expectedReturn: 5,
     duration: 10,
   });
@@ -25,7 +25,9 @@ function App() {
   return (
     <>
       <Header />;
-      <Calculator onChangeProps={handleUserInput} userInput={userInput} />;{durationIsValid && <Result resultInput={userInput} />}
+      <Calculator onChangeProps={handleUserInput} userInput={userInput} />
+      {!durationIsValid && <p className="center">Masukan Duration 0</p>}
+      {durationIsValid && <Result resultInput={userInput} />}
     </>
   );
 }
